@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="12441" started-at="2022-11-21T16:39:48 IST" finished-at="2022-11-21T16:40:01 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="12441" started-at="2022-11-21T16:39:48 IST" finished-at="2022-11-21T16:40:01 IST">
+      <class name="com.obsquara.TestNGSample.BasicCommandsOB">
+        <test-method status="PASS" signature="initializeBrowser()[pri:0, instance:com.obsquara.TestNGSample.BasicCommandsOB@59906517]" name="initializeBrowser" is-config="true" duration-ms="6044" started-at="2022-11-21T16:39:48 IST" finished-at="2022-11-21T16:39:54 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeBrowser -->
+        <test-method status="PASS" signature="singleInputVerification()[pri:0, instance:com.obsquara.TestNGSample.BasicCommandsOB@59906517]" name="singleInputVerification" duration-ms="295" started-at="2022-11-21T16:39:54 IST" finished-at="2022-11-21T16:39:54 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- singleInputVerification -->
+        <test-method status="PASS" signature="browserQuit()[pri:0, instance:com.obsquara.TestNGSample.BasicCommandsOB@59906517]" name="browserQuit" is-config="true" duration-ms="671" started-at="2022-11-21T16:39:55 IST" finished-at="2022-11-21T16:39:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+        <test-method status="PASS" signature="initializeBrowser()[pri:0, instance:com.obsquara.TestNGSample.BasicCommandsOB@59906517]" name="initializeBrowser" is-config="true" duration-ms="4535" started-at="2022-11-21T16:39:55 IST" finished-at="2022-11-21T16:40:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeBrowser -->
+        <test-method status="PASS" signature="twoInputField()[pri:0, instance:com.obsquara.TestNGSample.BasicCommandsOB@59906517]" name="twoInputField" duration-ms="209" started-at="2022-11-21T16:40:00 IST" finished-at="2022-11-21T16:40:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- twoInputField -->
+        <test-method status="PASS" signature="browserQuit()[pri:0, instance:com.obsquara.TestNGSample.BasicCommandsOB@59906517]" name="browserQuit" is-config="true" duration-ms="637" started-at="2022-11-21T16:40:00 IST" finished-at="2022-11-21T16:40:01 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+      </class> <!-- com.obsquara.TestNGSample.BasicCommandsOB -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
