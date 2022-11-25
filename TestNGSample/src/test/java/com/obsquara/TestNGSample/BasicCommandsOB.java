@@ -1,8 +1,11 @@
 package com.obsquara.TestNGSample;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class BasicCommandsOB extends Base{
 	@Test
@@ -27,5 +30,63 @@ public class BasicCommandsOB extends Base{
 		driver.findElement(By.xpath("//button[@id='button-two']")).click();
 		actualSum=driver.findElement(By.xpath("//div[@id='message-two']")).getText();
 	}
-
+	@Test
+	public void clearSample(){
+	WebElement enterMessageField=driver.findElement(By.xpath("//input[@id='single-input-field']"));
+	enterMessageField.sendKeys("Hello");
+	enterMessageField.clear();
+	WebElement showMessage=driver.findElement(By.xpath("//button[@id='button-one']"));
+	showMessage.isEnabled();
+	showMessage.isDisplayed();
+	showMessage.isSelected();
+	
+	}
+	@Test
+	public void testCaseSample() {
+		String inputMsg="Hello",actualMsg = null;
+		String expectedMsg="Your Message : "+inputMsg;
+		WebElement messageField=driver.findElement(By.xpath("//input[@id='single-input-field']"));
+		WebElement buttonField=driver.findElement(By.xpath("//button[@id='button-one']"));
+		WebElement yourMsg=driver.findElement(By.xpath("//div[@id='message-one']"));
+		boolean isMsgFieldDisplayed=messageField.isDisplayed();
+		boolean isButtonDisplayed=buttonField.isDisplayed();
+		if(isMsgFieldDisplayed && isButtonDisplayed) {
+			messageField.sendKeys("Hello");
+			boolean isButtonenabled=buttonField.isEnabled();
+			if(isButtonenabled) {
+				buttonField.click();
+				actualMsg=yourMsg.getText();
+				Assert.assertEquals(expectedMsg,actualMsg,"Messages are not equal" );
+			}
+			Assert.assertTrue(isButtonenabled, "Button is not Enabled");
+		}
+		Assert.assertTrue(isMsgFieldDisplayed, "message field is not Displayed");
+		Assert.assertTrue(isButtonDisplayed, "Button not Displayed");
+	}
+	@Test
+	public void getAttributeSample() {
+		String className=driver.findElement(By.xpath("//button[@id='button-one']")).getAttribute("class");
+		String tagName=driver.findElement(By.xpath("//button[@id='button-one']")).getTagName();
+		String backGroundColor=driver.findElement(By.xpath("//button[@id='button-one']")).getCssValue("background-color");
+		String fontColor=driver.findElement(By.xpath("//button[@id='button-one']")).getCssValue("color");
+		String borderRadius=driver.findElement(By.xpath("//button[@id='button-one']")).getCssValue("border-radius");
+		Dimension buttonSize=driver.findElement(By.xpath("//button[@id='button-one']")).getSize();
+		int buttonHeight=buttonSize.getHeight();
+	}
+	@Test
+	public void getTotalButtonCssValue() {
+		String expectedFondColor="rgba(255,255,255,1)",expectedBackGroundColor="rgba(0,123,255,1)",expectedFontWeight="400";
+		// expectedButtonSize=1;
+		WebElement buttonField=driver.findElement(By.xpath("//button[@id='button-two']"));
+		String actualFontColor=buttonField.getCssValue("color");
+		SoftAssert softassert=new SoftAssert();
+		softassert.assertEquals(expectedFondColor, actualFontColor,"Colors are not equal");
+		Dimension actualButtonSize=buttonField.getSize();
+		String actualBackGroundColor=buttonField.getCssValue("background-color");
+		softassert.assertEquals(expectedBackGroundColor, actualBackGroundColor,"Background colors are not equals");
+		String actualFontWeight=buttonField.getCssValue("font-weight");
+		softassert.assertEquals(expectedFondColor, actualFontColor,"font-weight are not equal");
+		softassert.assertAll();
+	}
+		
 }
