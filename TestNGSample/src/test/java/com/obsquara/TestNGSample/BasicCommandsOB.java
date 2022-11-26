@@ -1,7 +1,10 @@
 package com.obsquara.TestNGSample;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -87,6 +90,29 @@ public class BasicCommandsOB extends Base{
 		String actualFontWeight=buttonField.getCssValue("font-weight");
 		softassert.assertEquals(expectedFondColor, actualFontColor,"font-weight are not equal");
 		softassert.assertAll();
+	}
+	@Test
+	public void getLocation() {
+		Point showMessage=driver.findElement(By.xpath("//button[@id='button-one']")).getLocation();
+		int x=showMessage.getX();
+		int y=showMessage.getY();
+		Point enterMsgField=driver.findElement(By.xpath("//input[@id='single-input-field']")).getLocation();
+		int xAxis=enterMsgField.getX();
+		int yAxis=enterMsgField.getY();
+		if(yAxis<y) {
+			Assert.assertEquals(y, yAxis,"Show Message button place under enter message field");
+		}
+		
+	}
+	@Test
+	public void findElementsSample() {
+		List<WebElement>menuList=driver.findElements(By.xpath("//ul[@class='list-group list-group-flush']//li"));
+		menuList.get(2).click();
+	}
+	@Test
+	public void findElementsNavBar() {
+		List<WebElement>menuOption=driver.findElements(By.xpath("//ul[@class='navbar-nav']//li"));
+		menuOption.get(2).click();
 	}
 		
 }
