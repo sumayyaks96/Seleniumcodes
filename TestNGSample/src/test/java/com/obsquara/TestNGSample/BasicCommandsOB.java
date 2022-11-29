@@ -107,12 +107,90 @@ public class BasicCommandsOB extends Base{
 	@Test
 	public void findElementsSample() {
 		List<WebElement>menuList=driver.findElements(By.xpath("//ul[@class='list-group list-group-flush']//li"));
-		menuList.get(2).click();
+		for(WebElement inputMenu:menuList) {
+				String text=inputMenu.getText();
+				if(text.contentEquals("Radio Buttons Demo")) {
+					inputMenu.click();
+					break;
+				}
+				
+			}
+			
+		
 	}
 	@Test
 	public void findElementsNavBar() {
 		List<WebElement>menuOption=driver.findElements(By.xpath("//ul[@class='navbar-nav']//li"));
-		menuOption.get(2).click();
+		for(WebElement menu:menuOption) {
+				String text=menu.getText();
+				if(text.contentEquals("Date Pickers")) {
+					menu.click();
+					break;
+				}
+				
+			}
+			
+		}
+	
+		
+@Test
+public void checkRadioButton() {
+	
+	WebElement male=driver.findElement(By.xpath("(//label[@class='form-check-label'])[1]"));
+	male.click();
+	if(male.isSelected()) {
+		WebElement selectedValue=driver.findElement(By.xpath(""));
+		selectedValue.click();
+		 
+		
 	}
 		
 }
+	
+@Test
+public void isSelectedSample() {
+	driver.navigate().to("https://selenium.obsqurazone.com/radio-button-demo.php");
+	WebElement male=driver.findElement(By.xpath("(//div[@class='form-check form-check-inline'])[1]"));
+	WebElement female=driver.findElement(By.xpath("(//div[@class='form-check form-check-inline'])[2]"));
+	WebElement showSelectedValueButton=driver.findElement(By.xpath("//button[@id='button-one']"));
+	boolean maleFieldSelected=male.isSelected();
+	boolean femaleFieldSelected=female.isSelected();
+	if(maleFieldSelected == false|| femaleFieldSelected==false) {
+		showSelectedValueButton.click();
+		Assert.assertEquals(maleFieldSelected, femaleFieldSelected,"Radio button is Not checked");
+	}
+	
+}
+	
+@Test
+public void isSelecetedMaleField() {
+	driver.navigate().to("https://selenium.obsqurazone.com/radio-button-demo.php");
+	WebElement maleButton=driver.findElement(By.xpath("(//label[@class='form-check-label'])[1]"));
+	//WebElement female=driver.findElement(By.xpath("(//div[@class='form-check form-check-inline'])[2]"));
+	WebElement showSelectedValueButton=driver.findElement(By.xpath("//button[@id='button-one']"));
+	maleButton.click();
+	boolean maleFieldSelected=maleButton.isSelected();
+	//boolean femaleFieldSelected=female.isSelected();
+	if(maleFieldSelected) {
+		showSelectedValueButton.click();
+		Assert.assertEquals(maleButton, "Radio button 'Male' is checked");
+	}
+	Assert.assertEquals(maleButton,"Radio button is Not checked");
+}
+@Test
+public void isSelectedFemaleField() {
+	driver.navigate().to("https://selenium.obsqurazone.com/radio-button-demo.php");
+	WebElement male=driver.findElement(By.xpath("(//div[@class='form-check form-check-inline'])[1]"));
+	WebElement female=driver.findElement(By.xpath("(//div[@class='form-check form-check-inline'])[2]"));
+	WebElement showSelectedValueButton=driver.findElement(By.xpath("//button[@id='button-one']"));
+	boolean maleFieldSelected=male.isSelected();
+	boolean femaleFieldSelected=female.isSelected();
+	female.click();
+	if(femaleFieldSelected) {
+		showSelectedValueButton.click();
+		Assert.assertEquals(femaleFieldSelected, "Radio button 'Female' is checked");
+	}
+	Assert.assertEquals(maleFieldSelected, femaleFieldSelected,"Radio button is Not checked");
+}
+}
+	
