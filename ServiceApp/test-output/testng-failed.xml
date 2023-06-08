@@ -5,15 +5,15 @@
     <listener class-name="com.obsquara.serviceapp.Listeners"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
-    <parameter name="browser" value="chrome"/>
+    <parameter name="browser" value="Edge"/>
     <classes>
-      <class name="com.obsquara.testscript.LoginTest">
+      <class name="com.obsquara.testscript.HomeTest">
         <methods>
+          <include name="verifyQuickSmsFieldIsBelowQuickEmail"/>
           <include name="browserQuit"/>
-          <include name="verifyLoginUsingCorrectUsernameAndPassword"/>
           <include name="InitializeBrowser"/>
         </methods>
-      </class> <!-- com.obsquara.testscript.LoginTest -->
+      </class> <!-- com.obsquara.testscript.HomeTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

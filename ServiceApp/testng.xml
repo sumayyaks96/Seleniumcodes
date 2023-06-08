@@ -6,14 +6,20 @@
 	</listeners>
   <test thread-count="5" name="Test">
   <parameter name="browser" value="chrome">
- <classes>
-    <class name="com.obsquara.testscript.LoginTest">
-    <methods>
-      <include name="verifyLoginUsingCorrectUsernameAndPassword"></include>
-      
-    </methods>
+ 	<classes>
+    <class name="com.obsquara.testscript.HomeTest">
+  		<methods>
+      		<include name="verifyQuickSmsFieldIsBelowQuickEmail"></include>
+    	</methods>  
     </class>
-    </classes>
+    <!-- <class name="com.obsquara.testscript.LoginTest"></class>
+    <class name="com.obsquara.testscript.ReparationTest"></class> 
+    <class name="com.obsquara.testscript.ClientTest"></class>
+    <class name="com.obsquara.testscript.QuickEmailTest"></class>
+    <class name="com.obsquara.testscript.QuickSMSTest"></class> 
+    <class name="com.obsquara.testscript.InventoryTest"></class>-->
+   	
+  	</classes>
     </parameter>
   </test> <!-- Test -->
 

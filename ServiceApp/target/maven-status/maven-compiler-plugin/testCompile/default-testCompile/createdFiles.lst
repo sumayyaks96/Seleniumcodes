@@ -1,0 +1,16 @@
+com\obsquara\testscript\InventoryTest.class
+com\obsquara\pages\HomePage.class
+com\obsquara\testscript\ReparationTest.class
+com\obsquara\pages\QuickSMSPage.class
+com\obsquara\pages\ReparationPage.class
+com\obsquara\pages\ClientPage.class
+com\obsquara\serviceapp\Listeners.class
+com\obsquara\pages\LoginPage.class
+com\obsquara\testscript\LoginTest.class
+com\obsquara\pages\QuickEmailPage.class
+com\obsquara\testscript\HomeTest.class
+com\obsquara\testscript\ClientTest.class
+com\obsquara\pages\InventoryPage.class
+com\obsquara\testscript\QuickSMSTest.class
+com\obsquara\serviceapp\Base.class
+com\obsquara\testscript\QuickEmailTest.class

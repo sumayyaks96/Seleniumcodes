@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+	<listener class-name="com.obsquara.serviceapp.Listeners"/>
+	</listeners>
+  <test thread-count="5" name="Test1">
+  <parameter name="browser" value="chrome">
+ <classes>
+    <class name="com.obsquara.testscript.LoginTest">
+    <methods>
+      <include name="verifyLoginUsingCorrectUsernameAndPass"></include>
+      
+    </methods>
+    </class>
+    </classes>
+    </parameter>
+  </test> <!-- Test -->
+  
+  <test thread-count="5" name="Test2">
+  <parameter name="browser" value="Edge">
+ <classes>
+    <class name="com.obsquara.testscript.LoginTest">
+    <methods>
+      <include name="verifyLoginUsingCorrectUsernameAndPass"></include>
+      
+    </methods>
+    </class>
+    </classes>
+    </parameter>
+  </test> <!-- Test -->
+  
+
+</suite> <!-- Suite -->

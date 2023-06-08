@@ -11,7 +11,7 @@ import com.obsquara.serviceapp.Base;
 public class ReparationTest extends Base{
 	ReparationPage obj;
 	LoginPage obj1;
-	@Test
+	@Test(priority=4)
 	public void verifyNumberOfCompletedRepairs() throws IOException {
 		obj1=new LoginPage(driver);
 		obj1.verifyLoginPage();
@@ -19,12 +19,44 @@ public class ReparationTest extends Base{
 		obj.completedrepairCount();
 		
 	}
-	@Test
+	@Test(priority=3)
 	public void verifyNumberOfPendingRepairs() throws IOException {
 		obj1=new LoginPage(driver);
 		obj1.verifyLoginPage();
 		obj=new ReparationPage(driver);
 		obj.pendingrepairCount();
+		
+	}
+	@Test
+	public void verifySearchField() throws IOException, InterruptedException {
+		obj1=new LoginPage(driver);
+		obj1.verifyLoginPage();
+		obj=new ReparationPage(driver);
+		obj.searchField();
+		
+	}
+	@Test(priority=1)
+	public void verifyNextButtonInpendingRepairfield() throws IOException {
+		obj1=new LoginPage(driver);
+		obj1.verifyLoginPage();
+		obj=new ReparationPage(driver);
+		obj.nextButtonVerificationInPendingRepair();
+		
+	}
+	@Test(priority=2)
+	public void verifyPreviousButtonInpendingRepairfield() throws IOException {
+		obj1=new LoginPage(driver);
+		obj1.verifyLoginPage();
+		obj=new ReparationPage(driver);
+		obj.previousButtonVerificationInPendingRepair();
+		
+	}
+	@Test
+	public void verifyTitleReperationPage() throws IOException {
+		obj1=new LoginPage(driver);
+		obj1.verifyLoginPage();
+		obj=new ReparationPage(driver);
+		obj.getTitleReperationPageVerification();
 		
 	}
 

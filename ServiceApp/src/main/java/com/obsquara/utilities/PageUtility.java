@@ -54,6 +54,10 @@ import org.openqa.selenium.JavascriptExecutor;
 	Js1.executeScript("window.stop();");
 
 	}
+	public static WebElement enterStringValue(WebElement element, String value) {
+		element.sendKeys(value);
+		return element;
+		}
 	}
 
 
